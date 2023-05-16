@@ -4,10 +4,10 @@ import './HeaderNav.scss'
 function HeaderNav() {
   return (
 
-    <div class="nav-container">
-      <div class="nav-top">
+    <div className="nav-container">
+      <div className="nav-top">
         <div className="nav-top-left">
-          <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 256 43" viewBox="0 0 256 43">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 256 43" viewBox="0 0 256 43">
             <path d="m21.3.2c-11.8 0-21.3 9.5-21.3 21.3s9.6 21.3 21.3 21.3c11.8 0 21.3-9.6 21.3-21.3 0-11.8-9.6-21.3-21.3-21.3z" />
             <g fill="#fff">
               <path d="m7.6 7.8c3.7-3.7 8.6-5.7 13.7-5.7s10.1 2 13.7 5.7c3.3 3.3 5.3 7.6 5.6 12.3h-10.2c-.3-1.9-1.2-3.7-2.6-5.1-1.8-1.7-4.1-2.7-6.5-2.7-4.6 0-8.4 3.4-9.1 7.8h-10.2c.3-4.7 2.2-9 5.6-12.3z" />
@@ -37,11 +37,15 @@ function HeaderNav() {
 
         </div>
         <div className="nav-top-middle">
-          <form action="" class="search-form">
+          <form action="" className="search-form">
             <input type="search" placeholder="Search Pikachu, Plush, T-Shirts..." />
-            <div>
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="-10 0 1043 1024"><path fill="currentColor" d="M995 860 762 627q-28 40-61.5 75T627 762l233 233q28 28 68 28t67-28q28-27 28-67t-28-68zM385 672q-60 0-112-23-52-22-91-60.5T121 497q-23-52-23-112t23-112q22-52 61-91t91-61q52-23 112-23t112 23q53 22 91.5 61t60.5 91q23 52 23 112t-23 112q-22 53-60.5 91.5T497 649q-52 23-112 23zm381-287q0-80-30-150t-82.5-122.5T531 30 381 0q-78 0-148 30-69 30-121 82.5T30 235 0 385t30 150 82.5 122.5T235 740t150 30q80-1 149-32 70-30 121.5-82T736 534q30-69 30-149z"></path></svg>
-            </div>
+
+            <button type="button" className="search-button" >
+              <div>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="-10 0 1043 1024"><path fill="currentColor" d="M995 860 762 627q-28 40-61.5 75T627 762l233 233q28 28 68 28t67-28q28-27 28-67t-28-68zM385 672q-60 0-112-23-52-22-91-60.5T121 497q-23-52-23-112t23-112q22-52 61-91t91-61q52-23 112-23t112 23q53 22 91.5 61t60.5 91q23 52 23 112t-23 112q-22 53-60.5 91.5T497 649q-52 23-112 23zm381-287q0-80-30-150t-82.5-122.5T531 30 381 0q-78 0-148 30-69 30-121 82.5T30 235 0 385t30 150 82.5 122.5T235 740t150 30q80-1 149-32 70-30 121.5-82T736 534q30-69 30-149z"></path></svg>
+              </div>
+
+            </button>
           </form>
 
         </div>
@@ -53,24 +57,49 @@ function HeaderNav() {
         </div>
       </div>
 
-
-
-
-
-
-
-
-
-      <div class="nav-middle">
+      <div className="nav-middle">
         <div className="nav-middle-all">
-          generations 1,2,3,4,5,6
+          <div>Generation</div>
+
+          <div className="gen-wrapper">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+          </div>
+
         </div>
       </div>
-      <div class="nav-bottom">
-        <div className="nav-bottom-types">fire,water,ice,flying,normal</div>
+      <div className="nav-bottom">
+        Element Type
+        <div className="nav-bottom-first-row">
+          <div>Bug</div>
+          <div>Dragon</div>
+          <div>Fairy</div>
+          <div>Fire</div>
+          <div>Ghost</div>
+          <div>Ground</div>
+          <div>Normal</div>
+          <div>Psychic</div>
+          <div>Steel</div>
+
+        </div>
+        <div className="nav-bottom-second-row">
+          <div>Dark</div>
+          <div>Electric</div>
+          <div>Fighting</div>
+          <div>Flying</div>
+          <div>Grass</div>
+          <div>Ice</div>
+          <div>Poison</div>
+          <div>Rock</div>
+          <div>Water</div>
+
+        </div>
       </div>
     </div>
-
   )
 }
 

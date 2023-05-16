@@ -25,6 +25,7 @@ $color-regular-gray: rgb(88, 88, 88);
     .nav-top-left {
       height: 50px;
     }
+
     .nav-top-middle {
       width: 100%;
       padding: 0 3rem;
@@ -41,42 +42,103 @@ $color-regular-gray: rgb(88, 88, 88);
           border: none;
           width: 100%;
           padding-left: 1rem;
-          &::placeholder{
+
+          &::placeholder {
             font-size: 14px;
           }
         }
 
-        div {
-          background-color: $color-light-gray;
-          width: $searchbox-height;
-          height: $searchbox-height;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        .search-button {
+          border: none;
 
-          svg {
-            height: 1.5rem;
-            vertical-align: middle;
-            color: rgb(255, 255, 255);
+          :hover {
+            cursor: pointer;
+          }
+
+          div {
+            background-color: $color-light-gray;
+            width: $searchbox-height;
+            height: $searchbox-height;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+              height: 1.5rem;
+              // vertical-align: middle;
+              color: rgb(255, 255, 255);
+            }
           }
         }
+
       }
     }
 
     .nav-top-right {
+      display: flex;
+      align-items: center;
       height: 40px;
       font-size: 11px;
       font-weight: 600;
 
       svg {
         height: 70%;
-        vertical-align: middle;
+        // vertical-align: middle;
         padding: 0 .7rem;
       }
     }
   }
 
-  .nav-middle {}
+  .nav-middle {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    // border-bottom: 1px solid $color-light-gray;
+    padding: 10px 40px;
+    align-items: center;
 
-  .nav-bottom {}
+    .nav-middle-all {
+      width: 100%;
+      max-width: 1000px;
+
+      .gen-wrapper {
+        display: flex;
+        justify-content: space-around;
+
+        div {
+          background-color: rgb(204, 204, 204);
+        }
+      }
+    }
+  }
+
+  .nav-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .nav-bottom-first-row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 900px;
+
+      div {
+        width: 70px;
+        
+      }
+    }
+
+    .nav-bottom-second-row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 900px;
+
+      div {
+        width: 70px;
+        
+      }
+    }
+  }
 }

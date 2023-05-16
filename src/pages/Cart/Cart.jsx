@@ -1,8 +1,8 @@
 import React from 'react'
-
+import './Cart.scss'
 function Cart() {
   return (
-    <div>Cart</div>
+    <div>Cart iconsz</div>
   )
 }
 

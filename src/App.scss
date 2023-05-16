@@ -8,3 +8,9 @@
     }
     font-family: 'Montserrat', sans-serif;
   }
+  $bg-color: rgba( 255,255,255,.75 );
+
+  body{   
+    background-image: linear-gradient( 0deg, $bg-color,  $bg-color), url( './img/bg.jpg' );
+  }
+
