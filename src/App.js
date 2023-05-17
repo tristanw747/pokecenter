@@ -19,7 +19,7 @@ function Layout() {
     <div className='app'>
       <HeaderNav />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
