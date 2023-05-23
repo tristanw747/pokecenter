@@ -25,13 +25,11 @@ function PokemonList({ e }) {
 
   return (
     <div className={`card-container type-${pokemonObj.type[0]}`}>
-      <img className={`pokemon-img`} src={data?.sprites?.other?.dream_world?.front_default} alt="zz" width={150} height={100} />
-
+      <img className="pokemon-img" src={data?.sprites?.other?.dream_world?.front_default} alt={`${pokemonObj.name}`}  />
       <div className="pokemon-id" >  {pokemonObj.id}</div>
       <div className="pokemon-name" > {pokemonObj.name}  </div>
-
-      <div class="pokemon-type">{pokemonObj.type[0]}</div>
-      {pokemonObj.type[1] && <div class="pokemon-type">{pokemonObj.type[1]}</div>}
+      <div className="pokemon-type">{pokemonObj.type[0]}</div>
+      {pokemonObj.type[1] && <div className="pokemon-type">{pokemonObj.type[1]}</div>}
 
       {/* {pokemonObj.stats.hp}
       {pokemonObj.stats.attack}

@@ -105,8 +105,13 @@ $color-regular-gray: rgb(88, 88, 88);
         display: flex;
         justify-content: space-around;
 
-        div {
-          background-color: rgb(204, 204, 204);
+        .generation-button{
+          width: 80px;
+          height: 20px;
+          background-color: rgb(255, 160, 160);
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
         }
       }
     }
@@ -122,10 +127,14 @@ $color-regular-gray: rgb(88, 88, 88);
       justify-content: space-between;
       width: 100%;
       max-width: 900px;
-
+      margin-bottom: 10px;
       div {
         width: 70px;
-        
+        background-color: var(--color) ;
+        border-radius: 5px;
+        padding: 2px;
+        text-align: center;
+        color: black;
       }
     }
 
@@ -137,7 +146,11 @@ $color-regular-gray: rgb(88, 88, 88);
 
       div {
         width: 70px;
-        
+        background-color: var(--color) ;
+        border-radius: 5px;
+        padding: 2px;
+        text-align: center;
+        color: black;
       }
     }
   }

@@ -1,7 +1,15 @@
 import React from 'react';
 import './HeaderNav.scss'
+import useFetch from '../../hooks/useFetch';
+import apiEndpoints from '../../data/apiEndpoints';
+import { Link } from 'react-router-dom';
 
 function HeaderNav() {
+
+  function OnClickResponse(url) {
+    return useFetch(apiEndpoints.baseUrl + url)
+  }
+
   return (
 
     <div className="nav-container">
@@ -62,12 +70,19 @@ function HeaderNav() {
           <div>Generation</div>
 
           <div className="gen-wrapper">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
+            {/* <button className='generation-button' onClick={OnClickResponse(apiEndpoints.gen1)}>1</button>
+            <button className='generation-button' onClick={OnClickResponse(apiEndpoints.gen2)}>2</button>
+            <button className='generation-button' >3</button>
+            <button className='generation-button' >4</button>
+            <button className='generation-button' >5</button>
+            <button className='generation-button' >6</button> */}
+
+            <Link to="/gen1">Gen 1</Link>
+            <Link to="/gen2">Gen 2</Link>
+            <Link to="/gen3">Gen 3</Link>
+            <Link to="/gen4">Gen 4</Link>
+            <Link to="/gen5">Gen 5</Link>
+            <Link to="/gen6">Gen 6</Link>
           </div>
 
         </div>
@@ -75,27 +90,27 @@ function HeaderNav() {
       <div className="nav-bottom">
         Element Type
         <div className="nav-bottom-first-row">
-          <div>Bug</div>
-          <div>Dragon</div>
-          <div>Fairy</div>
-          <div>Fire</div>
-          <div>Ghost</div>
-          <div>Ground</div>
-          <div>Normal</div>
-          <div>Psychic</div>
-          <div>Steel</div>
+          <div className='type-bug'>Bug</div>
+          <div className='type-dragon' >Dragon</div>
+          <div className='type-fairy' >Fairy</div>
+          <div className='type-fire'>Fire</div>
+          <div className='type-ghost'>Ghost</div>
+          <div className='type-ground'>Ground</div>
+          <div className='type-normal'>Normal</div>
+          <div className='type-psychic'>Psychic</div>
+          <div className='type-steel'>Steel</div>
 
         </div>
         <div className="nav-bottom-second-row">
-          <div>Dark</div>
-          <div>Electric</div>
-          <div>Fighting</div>
-          <div>Flying</div>
-          <div>Grass</div>
-          <div>Ice</div>
-          <div>Poison</div>
-          <div>Rock</div>
-          <div>Water</div>
+          <div className='type-dark'>Dark</div>
+          <div className='type-electric'>Electric</div>
+          <div className='type-fighting' >Fighting</div>
+          <div className='type-flying'>Flying</div>
+          <div className='type-grass'>Grass</div>
+          <div className='type-ice'>Ice</div>
+          <div className='type-poison'>Poison</div>
+          <div className='type-rock' >Rock</div>
+          <div className='type-water' >Water</div>
 
         </div>
       </div>

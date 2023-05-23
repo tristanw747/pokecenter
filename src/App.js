@@ -12,7 +12,7 @@ import Footer from './components/Footer/Footer';
 import Cart from './pages/Cart/Cart';
 import Home from './pages/Home/Home';
 import Product from './pages/Product/Product';
-
+import apiEndpoints from './data/apiEndpoints';
 
 function Layout() {
   return (
@@ -38,9 +38,30 @@ const router = createBrowserRouter([
         element: <Cart />
       },
       {
-        path: "/product/:id",
+        path: "/gen1",
         element: <Product />
-      }
+      },
+      {
+        path: "/gen2",
+        element: <Product />
+      },
+      {
+        path: "/gen3",
+        element: <Product />
+      },
+      {
+        path: "/gen4",
+        element: <Product />
+      },
+      {
+        path: "/gen5",
+        element: <Product />
+      },
+      {
+        path: "/gen6",
+        element: <Product />
+      },
+
     ]
   }
 ])
