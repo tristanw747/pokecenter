@@ -1,14 +1,14 @@
 import React from 'react';
 import './HeaderNav.scss'
 import useFetch from '../../hooks/useFetch';
-import apiEndpoints from '../../data/apiEndpoints';
+
 import { Link } from 'react-router-dom';
 import generations from '../../data/generations';
 import { useState } from 'react';
 import Body from '../Body/Body';
 
 function HeaderNav() {
-  // const [gen, setGen] = useState(apiEndpoints.gen1)
+
 
   return (
 

@@ -2,18 +2,16 @@ import React, { useState } from 'react';
 import './Home.scss';
 // import useFetch from '../../hooks/useFetch';
 // import PokemonList from './PokemonList';
-import apiEndpoints from '../../data/apiEndpoints';
+import baseUrl from '../../data/baseUrl';
 import Body from '../../components/Body/Body';
-import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import generations from '../../data/generations';
 
 function Home() {
-  const [gen, setGen] = useState(apiEndpoints.gen1)
+  const [gen, setGen] = useState(generations[0].link)
 
- 
 
   return (
-    <Body gen={gen} setGen={setGen} />
+    <Body gen={gen}  />
   )
 
 }

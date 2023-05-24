@@ -4,7 +4,7 @@ import useFetch from '../../hooks/useFetch';
 function PokemonList({ e }) {
 
   const { data, loading, error } = useFetch(e.url)
-  if (loading) return <span></span>
+  if (loading) return <span>LOADING</span>
   if (error) console.log(error)
 
   const pokemonObj = {
@@ -25,7 +25,10 @@ function PokemonList({ e }) {
 
   return (
     <div className={`card-container type-${pokemonObj.type[0]}`}>
-      <img className="pokemon-img" src={data?.sprites?.other?.dream_world?.front_default} alt={`${pokemonObj.name}`}  />
+      {data?.sprites?.other.dream_world?.front_default ?
+        <img className="pokemon-img" src={data?.sprites?.other?.dream_world?.front_default} alt={`${pokemonObj.name}`} /> :
+        <img className="pokemon-img" src={data?.sprites?.other['official-artwork'].front_default} alt={`${pokemonObj.name}`} style={{width: "65%", height: "50%"}}/>
+      }
       <div className="pokemon-id" >  {pokemonObj.id}</div>
       <div className="pokemon-name" > {pokemonObj.name}  </div>
       <div className="pokemon-type">{pokemonObj.type[0]}</div>

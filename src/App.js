@@ -12,7 +12,6 @@ import Footer from './components/Footer/Footer';
 import Cart from './pages/Cart/Cart';
 import Home from './pages/Home/Home';
 import Product from './pages/Product/Product';
-import apiEndpoints from './data/apiEndpoints';
 import NotFound from './components/NotFound/NotFound';
 import generations from './data/generations';
 import Body from './components/Body/Body';
