@@ -3,18 +3,19 @@ import './HeaderNav.scss'
 import useFetch from '../../hooks/useFetch';
 import apiEndpoints from '../../data/apiEndpoints';
 import { Link } from 'react-router-dom';
+import generations from '../../data/generations';
+import { useState } from 'react';
+import Body from '../Body/Body';
 
 function HeaderNav() {
-
-  function OnClickResponse(url) {
-    return useFetch(apiEndpoints.baseUrl + url)
-  }
+  // const [gen, setGen] = useState(apiEndpoints.gen1)
 
   return (
 
     <div className="nav-container">
       <div className="nav-top">
         <div className="nav-top-left">
+          <Link to="/">
           <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 256 43" viewBox="0 0 256 43">
             <path d="m21.3.2c-11.8 0-21.3 9.5-21.3 21.3s9.6 21.3 21.3 21.3c11.8 0 21.3-9.6 21.3-21.3 0-11.8-9.6-21.3-21.3-21.3z" />
             <g fill="#fff">
@@ -42,7 +43,7 @@ function HeaderNav() {
             <path d="m38.8 39.8h-.7v2.2h-.6v-2.2h-.7v-.5h2.1v.5zm3.2 2.2h-.5v-2.2l-.8 2.2h-.3l-.7-2.2v2.2h-.5v-2.7h.8l.6 1.6.6-1.6h.8z" />
             <path d="m23.4 19.9c-.4-.4-1-.6-1.6-.6-1.4 0-2.6 1.2-2.6 2.6 0 .6.2 1.1.5 1.5-.6-.5-1-1.2-1-2 0-1.4 1.2-2.6 2.6-2.6.9.1 1.6.5 2.1 1.1z" fill="#fff" />
           </svg>
-
+          </Link>
         </div>
         <div className="nav-top-middle">
           <form action="" className="search-form">
@@ -70,19 +71,11 @@ function HeaderNav() {
           <div>Generation</div>
 
           <div className="gen-wrapper">
-            {/* <button className='generation-button' onClick={OnClickResponse(apiEndpoints.gen1)}>1</button>
-            <button className='generation-button' onClick={OnClickResponse(apiEndpoints.gen2)}>2</button>
-            <button className='generation-button' >3</button>
-            <button className='generation-button' >4</button>
-            <button className='generation-button' >5</button>
-            <button className='generation-button' >6</button> */}
-
-            <Link to="/gen1">Gen 1</Link>
-            <Link to="/gen2">Gen 2</Link>
-            <Link to="/gen3">Gen 3</Link>
-            <Link to="/gen4">Gen 4</Link>
-            <Link to="/gen5">Gen 5</Link>
-            <Link to="/gen6">Gen 6</Link>
+           
+          {generations.map((e)=>{
+            return <Link to={`gen/${e?.id}`} key={e.text}>{e?.text} </Link>
+          })}
+        
           </div>
 
         </div>

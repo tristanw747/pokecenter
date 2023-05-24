@@ -3,8 +3,11 @@ import useFetch from '../../hooks/useFetch'
 import apiEndpoints from '../../data/apiEndpoints'
 import PokemonList from '../../pages/Home/PokemonList'
 
-function Body({gen, setGen}) {
-  const { data, loading, error } = useFetch(apiEndpoints.baseUrl+gen)
+function Body({ gen }) {
+
+
+  
+  const { data, loading, error } = useFetch(apiEndpoints.baseUrl + gen)
   if (loading) return <h1> Loading...</h1>
   if (error) console.log(error)
   const pokemonList = data?.results
@@ -12,11 +15,9 @@ function Body({gen, setGen}) {
   return (
     <div className='poke-container'>
       {
-        
-      pokemonList?.map((e) => {
-        return (<PokemonList e={e} key={e.name} />)
-      })
-      
+        pokemonList?.map((e) => {
+          return (<PokemonList e={e} key={e.name} />)
+        })
       }
     </div>
   )
