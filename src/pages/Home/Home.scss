@@ -9,13 +9,18 @@ $font-color-1: rgb(255, 255, 255);
     position: relative;
     padding: 40px;
     margin: 1rem;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: var(--color);
+    box-shadow: 0 0 20px 0 var(--color);
     height: 220px;
     width: 180px;
+    overflow: hidden;
+    // will-change: box-shadow, transform;
+    transition: .3s all;
 
     &:hover {
       box-shadow: 0 0 10px var(--color);
+      transform: translateY(-5px);
     }
 
     .pokemon-img {
@@ -24,8 +29,9 @@ $font-color-1: rgb(255, 255, 255);
       // left:20px;
       width: 150px;
       // width: 100%;
-      height: 100px;
+      height: 130px;
       margin: 20px 10px;
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, .2));
     }
 
     .pokemon-id {
@@ -48,6 +54,50 @@ $font-color-1: rgb(255, 255, 255);
       font-weight: 700;
     }
 
+    .pokemon-ball {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      right: -10px;
+      bottom: -10px;
+      font-size: 10px;
+      color: rgba(255, 255, 255, .2);
+
+      &::before,
+      &::after {
+        display: block;
+        border-radius: 100%;
+      }
+
+      &::before {
+        content: '';
+        position: relative;
+        width: 10em;
+        padding-bottom: 10em;
+        border: 4em solid currentColor;
+        clip-path: polygon(0 0, 0 40%, 50% 40%, 50% 60%, 0 60%, 0 100%, 100% 100%, 100% 60%, 50% 60%, 50% 40%, 100% 40%, 100% 0);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 5em;
+        padding-bottom: 5em;
+        background-color: currentColor;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
     .pokemon-type {
       text-transform: capitalize;
       background-color: rgb(255, 255, 255, 0.5);
@@ -57,7 +107,7 @@ $font-color-1: rgb(255, 255, 255);
       text-align: center;
       margin-bottom: 7px;
       font-weight: 500;
-     
+
     }
   }
 
