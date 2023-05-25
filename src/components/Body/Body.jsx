@@ -8,7 +8,8 @@ function Body({ gen }) {
 
   
   const { data, loading, error } = useFetch(baseUrl.base + gen)
-  if (loading) return <h1> Loading...</h1>
+  // if (loading) return <h1> Loading...</h1>
+  if(!data || loading) {return null}
   if (error) console.log(error)
   const pokemonList =  data?.results
 

@@ -3,7 +3,7 @@ import {
   createBrowserRouter,
   Outlet, RouterProvider,
   Route, Routes,
-  createRoutesFromElements
+  createRoutesFromElements, Navigate
 } from "react-router-dom";
 
 import "./App.scss";
@@ -66,7 +66,7 @@ function App() {
 
   return (
     <>
-      
+
       <div className='app'>
         <HeaderNav />
         <Outlet />
@@ -75,17 +75,14 @@ function App() {
 
 
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Navigate to="gen/gen1" replace />} />
         <Route path='/cart' element={<Cart />} />
-        {/* <Route path='/gen/:gen2' element={<Cart />} /> */}
-
-        {/* <Route path='/gen/:link' element={<Generation />} /> */}
-
-          {
-            generations.map(({ id, link }) => (
-              <Route key={id} path={'/gen/' + id} element={<Generation inputGen={link}/>}/>
-            ))
-          }
+        {
+          generations.map(({ id, link }) => (
+            <Route key={id} path={'/gen/' + id + "*"} element={<Generation inputGen={link} />} />
+          ))
+        }
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   )

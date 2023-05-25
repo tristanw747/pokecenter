@@ -1,12 +1,16 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
+import { Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Card from '../../components/Card/Card';
+import Body from '../../components/Body/Body';
 
 function PokemonList({ e }) {
 
   const { data, loading, error } = useFetch(e.url)
-  if (loading) return <span>LOADING</span>
+  // if (loading) return <span></span>
   if (error) console.log(error)
-
+  if(!data || loading) {return null}
   const pokemonObj = {
     id: "#" + data?.id,
     name: data?.name,
@@ -23,24 +27,36 @@ function PokemonList({ e }) {
     }
   }
 
-  return (
+return (
+    <>
+    <Routes>
+      <Route  path={`/${pokemonObj.name}`} element={<Card pokemonID={pokemonObj.name}/>} />
+    </Routes>
+   <Link to={`${pokemonObj.name}`}>
     <div className={`card-container type-${pokemonObj.type[0]}`}>
       {data?.sprites?.other.dream_world?.front_default ?
         <img className="pokemon-img" src={data?.sprites?.other?.dream_world?.front_default} alt={`${pokemonObj.name}`} /> :
         <img className="pokemon-img" src={data?.sprites?.other['official-artwork'].front_default} alt={`${pokemonObj.name}`} style={{width: "65%", height: "50%"}}/>
       }
       <div className="pokemon-id" >  {pokemonObj.id}</div>
-      <div className="pokemon-name" > {pokemonObj.name}  </div>
-      <div className="pokemon-type">{pokemonObj.type[0]}</div>
+      <div className="pokemon-name" > {pokemonObj.name} </div>
+      <div className="pokemon-type"> {pokemonObj.type[0]} </div>
       {pokemonObj.type[1] && <div className="pokemon-type">{pokemonObj.type[1]}</div>}
+
+
 
       {/* {pokemonObj.stats.hp}
       {pokemonObj.stats.attack}
       {pokemonObj.stats.defense}
       {pokemonObj.stats.speed} */}
 
-    </div>
 
+
+
+
+    </div>
+    </Link>
+    </>
   )
 }
 
