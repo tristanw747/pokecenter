@@ -79,7 +79,7 @@ function App() {
         <Route path='/cart' element={<Cart />} />
         {
           generations.map(({ id, link }) => (
-            <Route key={id} path={'/gen/' + id + "*"} element={<Generation inputGen={link} />} />
+            <Route key={id} path={'/gen/' + id + "/*"} element={<Generation inputGen={link} />} />
           ))
         }
         <Route path="*" element={<NotFound />} />

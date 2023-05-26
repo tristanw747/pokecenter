@@ -88,16 +88,6 @@ $font-color-1: rgb(255, 255, 255);
       }
     }
 
-
-
-
-
-
-
-
-
-
-
     .pokemon-type {
       text-transform: capitalize;
       background-color: rgb(255, 255, 255, 0.5);
@@ -112,6 +102,58 @@ $font-color-1: rgb(255, 255, 255);
   }
 
 }
+
+
+
+
+
+.modal-container, .modal-transparent-back {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+ 
+  
+}
+
+.modal-container{
+  z-index: 40;
+}
+
+.modal-transparent-back{
+  background: rgba(49,49,49,0.8);
+}
+
+body.active-modal {
+  overflow-y: hidden;
+}
+.modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
+
+}
+
+.card-modal-container{
+  position: relative;
+    padding: 40px;
+    margin: 1rem;
+    border-radius: 20px;
+    background-color: var(--color);
+    box-shadow: 0 0 20px 0 var(--color);
+    height: 420px;
+    width: 380px;
+    overflow: hidden;
+    // will-change: box-shadow, transform;
+    transition: .3s all;
+}
+
+
 
 
 

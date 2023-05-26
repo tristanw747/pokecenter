@@ -50,7 +50,7 @@ const generations = [
 		limit: 88,
 	},
 	{
-		id: 8,
+		id: "gen8",
 		link: '?offset=809&limit=89',
 		text: 'VIII',
 		offset: 809,
